@@ -9,7 +9,9 @@ const Navbar = () => {
         setIsDrawerOpen(!isDrawerOpen);
     };
 
-    //return
+    return (
+        <p>Navbar</p>
+    );
 };
 
 export default Navbar;
