@@ -1,12 +1,70 @@
 import type { Metadata } from "next";
-//import localFont from "next/font/local";
+import localFont from "next/font/local";
 import "./globals.css";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
+const helvetica = localFont({
+  src: [
+    {
+      path: './fonts/helvetica/Helvetica CE Medium Condensed.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/helvetica/Helvetica CE Bold Condensed.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/helvetica/Helvetica Bold Condensed.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: './fonts/helvetica/Helvetica Black Condensed.woff2',
+      weight: '800',
+      style: 'normal',
+    },
+  ],
+  variable: "--font-helvetica",
+});
+
+const inter = localFont({
+  src: [
+    {
+      path: './fonts/inter/Inter_18pt-Light.woff2',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: './fonts/inter/Inter_18pt-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/inter/Inter_18pt-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/inter/Inter_18pt-Bold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: "--font-inter",
+});
+
+const miniver = localFont({
+  src: [
+    {
+      path: './fonts/miniver/Miniver-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: "--font-miniver",
+});
+
 
 export const metadata: Metadata = {
   title: "M-JOY",
@@ -21,7 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        /*className={`${geistSans.variable} ${geistMono.variable}`}*/
+        className={`${helvetica.variable} ${inter.variable} ${miniver.variable}`}
       >
         {children}
       </body>
