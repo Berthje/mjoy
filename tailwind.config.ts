@@ -18,6 +18,11 @@ const config: Config = {
         border_button: 'rgba(59, 72, 17, 1)', // Green Button Border
         white: 'rgba(255, 255, 255, 1)', // White
       },
+      fontFamily: {
+        helvetica: ['var(--font-helvetica)'],
+        inter: ['var(--font-inter)'],
+        miniver: ['var(--font-miniver)'],
+      },
     },
   },
   plugins: [],
