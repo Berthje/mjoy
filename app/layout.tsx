@@ -83,7 +83,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${helvetica.variable} ${inter.variable} ${miniver.variable}`}
+        className={`${helvetica.variable} ${inter.variable} ${miniver.variable} px-10 py-8`}
       >
         <Navbar />
         {children}
