@@ -20,12 +20,12 @@ const helvetica = localFont({
     },
     {
       path: './fonts/helvetica/Helvetica Bold Condensed.woff2',
-      weight: '600',
+      weight: '700',
       style: 'normal',
     },
     {
       path: './fonts/helvetica/Helvetica Black Condensed.woff2',
-      weight: '800',
+      weight: '900',
       style: 'normal',
     },
   ],
