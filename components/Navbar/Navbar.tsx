@@ -2,15 +2,40 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import navData from "../../data/data.json";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
 
     const handleNav = () => {
         setNav(!nav);
     };
+
+    useEffect(() => {
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => {
+            sections.forEach((section) => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
 
     return (
         <header>
@@ -27,8 +52,14 @@ const Navbar = () => {
                             <div className="md:flex md:w-full md:items-center md:justify-between md:ml-8">
                                 <ul className="hidden md:flex md:gap-x-6 md:flex-wrap">
                                     {navData.navItems.map((item) => {
+                                        const activeClasses =
+                                            activeSection ===
+                                            item.link.substring(1)
+                                                ? "font-bold text-cyan-400"
+                                                : "";
+
                                         return (
-                                            <li key={item.name}>
+                                            <li key={item.name} className={`${activeClasses}`}>
                                                 <Link href={item.link}>
                                                     {item.name}
                                                 </Link>
@@ -130,8 +161,11 @@ const Navbar = () => {
                                 })}
 
                                 <li>
-                                    <Link href="#reserveren" className="cursor-pointer text-white ease-in-out duration-150 hover:opacity-75 hover:tracking-wider">
-                                    Reserveren?
+                                    <Link
+                                        href="#reserveren"
+                                        className="cursor-pointer text-white ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
+                                    >
+                                        Reserveren?
                                     </Link>
                                 </li>
                             </ul>
