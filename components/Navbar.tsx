@@ -13,6 +13,10 @@ const Navbar = () => {
         setNav(!nav);
     };
 
+    const closeNav = () => {
+        setNav(false);
+    };
+
     useEffect(() => {
         const sections = document.querySelectorAll("section");
         const observer = new IntersectionObserver(
@@ -152,9 +156,9 @@ const Navbar = () => {
                             <ul className="text-secondary space-y-1 font-helvetica font-semibold uppercase text-[3rem] tracking-wide">
                                 {navData.navItems.map((item) => {
                                     return (
-                                        <li key={item.name}>
+                                        <li key={item.name} onClick={closeNav} aria-label={`ga naar sectie ${item.name}`} role="navigation">
                                             <Link
-                                                href="/"
+                                                href={item.link}
                                                 className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
                                             >
                                                 {item.name}
@@ -167,6 +171,7 @@ const Navbar = () => {
                                     <Link
                                         href="#reserveren"
                                         className="cursor-pointer text-white ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
+                                        onClick={closeNav} aria-label="reserveren" role="navigation"
                                     >
                                         Reserveren?
                                     </Link>
