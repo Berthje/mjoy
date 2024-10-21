@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <header>
             <nav>
-                <div className="w-full h-20">
+                <div className="w-full h-20 font-inter">
                     <div className="w-full flex justify-between items-center">
                         <div className="w-full flex items-center justify-between md:justify-start">
                             <Image
@@ -117,22 +117,23 @@ const Navbar = () => {
                             </div>
                             <ul className="text-secondary space-y-1 font-helvetica font-semibold uppercase text-[3rem] tracking-wide">
                                 {navData.navItems.map((item) => {
-                                    const commonClasses = "cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider";
-                                    const itemClasses =
-                                        item.name.toLowerCase().startsWith("reserveren")
-                                            ? `text-white ${commonClasses}`
-                                            : commonClasses;
                                     return (
                                         <li key={item.name}>
                                             <Link
                                                 href="/"
-                                                className={itemClasses}
+                                                className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
                                             >
                                                 {item.name}
                                             </Link>
                                         </li>
                                     );
                                 })}
+
+                                <li>
+                                    <Link href="#reserveren" className="cursor-pointer text-white ease-in-out duration-150 hover:opacity-75 hover:tracking-wider">
+                                    Reserveren?
+                                    </Link>
+                                </li>
                             </ul>
                             <ul className="flex space-x-4 items-center mt-auto">
                                 <li className="cursor-pointer hover:opacity-75">

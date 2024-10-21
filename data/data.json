@@ -5,7 +5,6 @@
         { "name": "Tearoom", "link": "#tearoom" },
         { "name": "Zondags Ontbijt", "link": "#zondagsontbijt" },
         { "name": "Evenementen", "link": "#evenementen" },
-        { "name": "Take Away", "link": "#takeaway" },
-        { "name": "Reserveren?", "link": "#reserveren" }
+        { "name": "Take Away", "link": "#takeaway" }
     ]
 }
