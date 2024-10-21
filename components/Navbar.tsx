@@ -55,7 +55,7 @@ const Navbar = () => {
                                         const activeClasses =
                                             activeSection ===
                                             item.link.substring(1)
-                                                ? "font-bold text-cyan-400"
+                                                ? "font-bold relative inline-block before:absolute before:h-[2px] before:w-1/2 before:left-0 before:-bottom-1 before:bg-primary before:block"
                                                 : "";
 
                                         return (

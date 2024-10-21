@@ -3,8 +3,8 @@
         { "name": "Home", "link": "#home" },
         { "name": "Bistro", "link": "#bistro" },
         { "name": "Tearoom", "link": "#tearoom" },
-        { "name": "Zondags Ontbijt", "link": "#zondagsontbijt" },
+        { "name": "Zondags ontbijt", "link": "#zondagsontbijt" },
         { "name": "Evenementen", "link": "#evenementen" },
-        { "name": "Take Away", "link": "#takeaway" }
+        { "name": "Takeaway", "link": "#takeaway" }
     ]
 }
