@@ -24,8 +24,8 @@ const Navbar = () => {
                                 height="90"
                                 alt="mjoy logo"
                             />
-                            <div>
-                                <ul className="hidden md:flex space-x-6">
+                            <div className="md:flex md:w-full md:items-center md:justify-between md:ml-8">
+                                <ul className="hidden md:flex md:gap-x-6 md:flex-wrap">
                                     {navData.navItems.map((item) => {
                                         return (
                                             <li key={item.name}>
@@ -35,6 +35,34 @@ const Navbar = () => {
                                             </li>
                                         );
                                     })}
+                                </ul>
+                                <ul className="hidden md:flex md:items-center md:min-w-fit">
+                                    <li className="cursor-pointer hover:opacity-75">
+                                        <a
+                                            href="https://www.facebook.com/MJOYVeldegem/"
+                                            target="_blank"
+                                        >
+                                            <Image
+                                                src="/facebook-icon.svg"
+                                                width="28"
+                                                height="28"
+                                                alt="facebook"
+                                            />
+                                        </a>
+                                    </li>
+                                    <li className="cursor-pointer hover:opacity-75">
+                                        <a
+                                            href="https://www.instagram.com/mjoyveldegem/"
+                                            target="_blank"
+                                        >
+                                            <Image
+                                                src="/instagram-icon.svg"
+                                                width="28"
+                                                height="28"
+                                                alt="instagram"
+                                            />
+                                        </a>
+                                    </li>
                                 </ul>
                                 <button
                                     className="md:hidden"
