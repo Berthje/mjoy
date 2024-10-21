@@ -16,8 +16,8 @@ const Navbar = () => {
         <header>
             <nav>
                 <div className="w-full h-20">
-                    <div className="flex justify-between items-center w-full">
-                        <div className="flex items-center">
+                    <div className="w-full flex justify-between items-center">
+                        <div className="w-full flex items-center justify-between md:justify-start">
                             <Image
                                 src="/mjoy-purple.svg"
                                 width="90"
@@ -62,8 +62,8 @@ const Navbar = () => {
                     <div
                         className={
                             nav
-                                ? "fixed left-0 top-0 w-full h-screen ease-in-out z-[100] px-10 py-8 duration-300"
-                                : "fixed left-[-100%] top-0 ease-in-out z-[100] px-10 py-8 duration-300"
+                                ? "fixed right-0 top-0 w-full h-screen ease-in-out z-[100] px-10 py-8 duration-300"
+                                : "fixed right-[-100%] top-0 ease-in-out z-[100] px-10 py-8 duration-300"
                         }
                     >
                         <div className="flex flex-col w-full h-full">
