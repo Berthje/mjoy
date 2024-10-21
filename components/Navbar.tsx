@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import navData from "../../data/data.json";
+import navData from "../data/data.json";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -23,7 +23,7 @@ const Navbar = () => {
                     }
                 });
             },
-            { threshold: 0.5 }
+            { threshold: 0.8 }
         );
 
         sections.forEach((section) => {
@@ -38,15 +38,15 @@ const Navbar = () => {
     }, []);
 
     return (
-        <header>
+        <header className="py-8">
             <nav>
-                <div className="w-full h-20 font-inter">
+                <div className="w-full font-inter">
                     <div className="w-full flex justify-between items-center">
                         <div className="w-full flex items-center justify-between md:justify-start">
                             <Image
                                 src="/mjoy-purple.svg"
-                                width="90"
-                                height="90"
+                                width="85"
+                                height="85"
                                 alt="mjoy logo"
                             />
                             <div className="md:flex md:w-full md:items-center md:justify-between md:ml-8">
@@ -59,7 +59,10 @@ const Navbar = () => {
                                                 : "";
 
                                         return (
-                                            <li key={item.name} className={`${activeClasses}`}>
+                                            <li
+                                                key={item.name}
+                                                className={`${activeClasses}`}
+                                            >
                                                 <Link href={item.link}>
                                                     {item.name}
                                                 </Link>
@@ -67,7 +70,7 @@ const Navbar = () => {
                                         );
                                     })}
                                 </ul>
-                                <ul className="hidden md:flex md:items-center md:min-w-fit">
+                                <ul className="hidden md:flex md:items-center md:min-w-fit gap-x-1 lg:gap-x-4">
                                     <li className="cursor-pointer hover:opacity-75">
                                         <a
                                             href="https://www.facebook.com/MJOYVeldegem/"

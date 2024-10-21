@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const helvetica = localFont({
@@ -82,7 +82,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${helvetica.variable} ${inter.variable} ${miniver.variable} px-10 py-8`}
+                className={`${helvetica.variable} ${inter.variable} ${miniver.variable} px-10`}
             >
                 <Navbar />
                 {children}

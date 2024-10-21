@@ -7,7 +7,7 @@ import ZondagsOntbijt from "@/components/ZondagsOntbijt";
 
 export default function Home() {
   return (
-    <main className="flex flex-col space-y-96">
+    <main>
       <Hero />
       <Bistro />
       <Tearoom />
