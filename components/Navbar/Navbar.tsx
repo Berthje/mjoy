@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import navData from "../../data/data.json";
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
@@ -15,37 +16,39 @@ const Navbar = () => {
         <header>
             <nav>
                 <div className="w-full h-20">
-                    <div className="flex justify-between items-center w-full ">
-                        <Image
-                            src="/mjoy-purple.svg"
-                            width="90"
-                            height="90"
-                            alt="mjoy logo"
-                        />
-                        <div>
-                            <ul className="hidden md:flex">
-                                <li className="ml-10">
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li className="ml-10">
-                                    <Link href="/">Home dsfdfsd</Link>
-                                </li>
-                                <li className="ml-10">
-                                    <Link href="/">Home fdsfs</Link>
-                                </li>
-                            </ul>
-                            <button
-                                className="md:hidden"
-                                onClick={handleNav}
-                                aria-label="Open menu"
-                            >
-                                <Image
-                                    src="/open-menu.svg"
-                                    width="25"
-                                    height="25"
-                                    alt="open menu"
-                                />
-                            </button>
+                    <div className="flex justify-between items-center w-full">
+                        <div className="flex items-center">
+                            <Image
+                                src="/mjoy-purple.svg"
+                                width="90"
+                                height="90"
+                                alt="mjoy logo"
+                            />
+                            <div>
+                                <ul className="hidden md:flex space-x-6">
+                                    {navData.navItems.map((item) => {
+                                        return (
+                                            <li key={item.name}>
+                                                <Link href={item.link}>
+                                                    {item.name}
+                                                </Link>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                                <button
+                                    className="md:hidden"
+                                    onClick={handleNav}
+                                    aria-label="Open menu"
+                                >
+                                    <Image
+                                        src="/open-menu.svg"
+                                        width="25"
+                                        height="25"
+                                        alt="open menu"
+                                    />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -84,55 +87,24 @@ const Navbar = () => {
                                     />
                                 </button>
                             </div>
-                            <ul className="text-secondary space-y-2 font-helvetica font-semibold uppercase text-[3rem] tracking-wide">
-                                <li>
-                                    <Link
-                                        href="/"
-                                        className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
-                                    >
-                                        Bistro
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/"
-                                        className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
-                                    >
-                                        Tearoom
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/"
-                                        className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
-                                    >
-                                        Zondags Ontbijt
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/"
-                                        className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
-                                    >
-                                        Evenementen
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link
-                                        href="/"
-                                        className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider"
-                                    >
-                                        Take Away
-                                    </Link>
-                                </li>
-                                <li className="pt-6">
-                                    <Link
-                                        href="/"
-                                        className="cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider text-white"
-                                    >
-                                        Reserveren?
-                                    </Link>
-                                </li>
+                            <ul className="text-secondary space-y-1 font-helvetica font-semibold uppercase text-[3rem] tracking-wide">
+                                {navData.navItems.map((item) => {
+                                    const commonClasses = "cursor-pointer ease-in-out duration-150 hover:opacity-75 hover:tracking-wider";
+                                    const itemClasses =
+                                        item.name.toLowerCase().startsWith("reserveren")
+                                            ? `text-white ${commonClasses}`
+                                            : commonClasses;
+                                    return (
+                                        <li key={item.name}>
+                                            <Link
+                                                href="/"
+                                                className={itemClasses}
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                             <ul className="flex space-x-4 items-center mt-auto">
                                 <li className="cursor-pointer hover:opacity-75">
