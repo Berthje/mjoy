@@ -53,7 +53,7 @@ const Navbar = () => {
                                 height="85"
                                 alt="mjoy logo"
                             />
-                            <div className="md:flex md:w-full md:items-center md:justify-between md:ml-8">
+                            <div className="md:flex md:w-full md:items-center md:justify-between md:ml-8 lg:ml-12">
                                 <ul className="hidden md:flex md:gap-x-6 md:flex-wrap">
                                     {navData.navItems.map((item) => {
                                         const activeClasses =
